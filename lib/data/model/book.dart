@@ -12,49 +12,33 @@
 
 class Book {
   final String title;
-  final String link;
-  final String image;
   final String author;
-  final String discount;
-  final String publisher;
-  final String pubdate;
-  final String isbn;
   final String description;
+  final String image;
+  final String link;
 
   Book({
     required this.title,
-    required this.link,
-    required this.image,
     required this.author,
-    required this.discount,
-    required this.publisher,
-    required this.pubdate,
-    required this.isbn,
     required this.description,
+    required this.image,
+    required this.link,
   });
 
   Book.fromJson(Map<String, dynamic> json)
       : this(
           title: json["title"],
-          link: json["link"],
-          image: json["image"],
           author: json["author"],
-          discount: json["discount"],
-          publisher: json["publisher"],
-          pubdate: json["pubdate"],
-          isbn: json["isbn"],
           description: json["description"],
+          image: json["image"],
+          link: json["link"],
         );
 
   Map<String, dynamic> toJson() => {
         "title": title,
-        "link": link,
-        "image": image,
         "author": author,
-        "discount": discount,
-        "publisher": publisher,
-        "pubdate": pubdate,
-        "isbn": isbn,
         "description": description,
+        "image": image,
+        "link": link,
       };
 }

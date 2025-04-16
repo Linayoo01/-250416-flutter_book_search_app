@@ -1,0 +1,2 @@
+C:/Users/PC_1M/250416_1/flutter_book_search_app/android/app/.cxx/Debug/545n4r3y/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/PC_1M/250416_1/flutter_book_search_app/android/app/.cxx/Debug/545n4r3y/x86_64/CMakeFiles/rebuild_cache.dir

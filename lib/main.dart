@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book_search_app/ui/pages/home/home_page.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_book_search_app/ui/home_page.dart';
 
 void main() {
-  // ProviderScope 로 앱을 감싸서 RiverPod이 ViewModel 관리할 수 있게 선언
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,6 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Book Search App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
       home: HomePage(),
     );
   }

@@ -3,11 +3,9 @@ import 'package:flutter_book_search_app/data/model/book.dart';
 import 'package:flutter_book_search_app/ui/pages/detail/detail_page.dart';
 
 class HomeBottomSheet extends StatelessWidget {
-  // 2. 생성자에 추가
   HomeBottomSheet(this.book);
 
-  // 1. 홈페이지에서 전달해줄 수 있게 추가
-  Book book;
+  final Book book;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,6 @@ class HomeBottomSheet extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // 3. 데이터 씌우기
           Image.network(
             book.image,
             fit: BoxFit.fitHeight,
@@ -58,16 +55,15 @@ class HomeBottomSheet extends StatelessWidget {
                 Spacer(),
                 GestureDetector(
                   onTap: () {
-                    // 자세히 보기 터치했을 때 DetailPage로 가게 미리 구현
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return DetailPage(book);
+                        return DetailPage();
                       },
                     ));
                   },
                   child: Container(
                     width: double.infinity,
-                    height: 50, // UX 고려한 높이
+                    height: 50,
                     alignment: Alignment.center,
                     color: Colors.transparent,
                     child: Text(

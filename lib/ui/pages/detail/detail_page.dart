@@ -3,15 +3,19 @@ import 'package:flutter_book_search_app/data/model/book.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class DetailPage extends StatelessWidget {
-  DetailPage(this.book);
-
-  Book book;
+  const DetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(book.title),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('해리포터와 마법사의 돌'),
       ),
       body: InAppWebView(
         initialSettings: InAppWebViewSettings(
@@ -21,8 +25,21 @@ class DetailPage extends StatelessWidget {
               'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
         ),
         initialUrlRequest: URLRequest(
-          url: WebUri(book.link),
+          url: WebUri("https://www.naver.com/"),
         ),
+        onWebViewCreated: (controller) {
+          print('onWebViewCreated');
+        },
+        onLoadStart: (controller, url) {
+          print('onLoadStart');
+        },
+        onLoadStop: (controller, url) {
+          print('onLoadStop');
+        },
+        onPermissionRequest: (controller, request) async {
+          print('onPermissionRequest');
+          return null;
+        },
       ),
     );
   }
